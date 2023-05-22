@@ -1,5 +1,8 @@
 .contenair{
-   max-width: 1800px;
+   max-width: 1400px;
    min-height: 93vh;
    margin: 0 auto;
+   @media (min-width: 920px) {
+      width: 90%;
+   }
 }

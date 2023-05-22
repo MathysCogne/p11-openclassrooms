@@ -1,0 +1,54 @@
+.sign-in{
+   box-sizing: border-box;
+   background-color: white;
+   margin: 0 auto;
+   margin-top: 5rem;
+   padding: 2rem;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   &__wrapper{
+      
+   }
+   &__button{
+      display: block;
+      width: 100%;
+      padding: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      border-color: #00bc7700;
+      background-color: #00bc77;
+      color: black;
+   }
+   &-icon{
+      font-size: 5rem;
+      margin-bottom: 10px;
+   }
+}
+
+.input{
+   &-remember{
+      display: flex;
+
+      label{
+         margin-left: 0.3rem;
+      }
+   }
+   &-wrapper{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-bottom: 2rem;
+
+      label{
+         font-weight: bold;
+      }
+      input{
+         padding: 5px;
+         font-size: 1.2rem;
+      }
+   }
+}

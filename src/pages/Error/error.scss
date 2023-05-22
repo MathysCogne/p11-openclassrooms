@@ -5,13 +5,16 @@
    align-items: center;
    justify-content: center;
    flex-direction: column;
-
-   font-size: 3rem;
-
    h1{
-      font-size: 20rem;
+      font-size: 6rem;
+      @media (min-width: 920px) {
+         font-size: 20rem;
+      }
    }
    p{
-      font-size: 2rem;
+      font-size: 1.6rem;
+      @media (min-width: 920px) {
+         font-size: 2rem;
+      }
    }
 }

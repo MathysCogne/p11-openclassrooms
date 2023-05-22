@@ -4,6 +4,9 @@
    align-items: center;
  
    height: 100px;
+   @media (min-width: 920px) {
+      height: 125px;
+   }
 
    a{
       display: flex;

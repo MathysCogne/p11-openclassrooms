@@ -1,12 +1,17 @@
 .banner{
    background-image: url("../../assets/img/bank-tree.jpeg");
-   background-position: 0;
+   
    background-size: cover;
    background-repeat: no-repeat;
    height: 40vh;
    width: 100%;
    position: relative;
-   border: #222 1px solid;
+   background-position: 0 -50px;
+   
+   @media (min-width: 920px) {
+      border-radius: 25px;
+      background-position: 0 ;
+   }
 
    &__content{
       position: relative;
@@ -16,6 +21,7 @@
       padding: 2rem;
       text-align: left;
       margin: 0 auto;
+      border-radius: 25px;
       @media (min-width: 920px) {
          position: absolute;
          top: 50px;
@@ -49,10 +55,11 @@
    flex-direction: column;
    align-items: center;
 
-   margin-top: 4rem;
+   
 
    @media (min-width: 920px) {
       flex-direction: row;
+      margin-top: 4rem;
    }
 
    &__item{

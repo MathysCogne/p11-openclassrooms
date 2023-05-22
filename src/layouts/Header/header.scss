@@ -1,0 +1,29 @@
+.cont-nav{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ 
+   height: 100px;
+
+   a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      margin: 0 7px 0 0;
+
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #000;
+   }
+   p, i {
+      margin: 0 3px;
+   }
+   p:hover{
+      text-decoration: underline;
+   }
+}
+
+.logo-header{
+   height: 7vh;
+}

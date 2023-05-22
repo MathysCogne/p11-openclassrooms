@@ -2,27 +2,28 @@
 import { Route, Routes } from "react-router-dom";
 
 // PAGES
-import Home from "./pages/Home";
-import SignIn from "./pages/SignIn";
-import User from "./pages/User";
-import Error from "./pages/Error";
+import Home from "./pages/Home/Home";
+import SignIn from "./pages/SignIn/SignIn";
+import User from "./pages/User/User";
+import Error from "./pages/Error/Error";
 
 // LAYOUTS
-import Header from "./layouts/Header";
-import Footer from "./layouts/Footer";
+import Header from "./layouts/Header/Header";
+import Footer from "./layouts/Footer/Footer";
 
 // COMPONENTS
-import EditUser from "./components/EditUser";
-import Transactions from "./components/Transactions";
+// import EditUser from "./components/EditUser/EditUser";
+// import Transactions from "./components/Transactions/Transactions";
 
 // STYLES
-import "./styles/App.scss";
+import "./style/app.scss";
 
 
 // ROUTES & HEADER / FOOTER
 function App() {
   return (
     <>
+    <div className="contenair">
       <Header />
 
       <Routes>
@@ -32,7 +33,8 @@ function App() {
 
         <Route path="*" element={<Error />} />
       </Routes>
-
+    
+    </div>
       <Footer />
     </>
   );

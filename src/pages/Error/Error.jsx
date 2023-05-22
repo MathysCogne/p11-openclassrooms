@@ -1,4 +1,4 @@
-function User() {
+function Error() {
    return (
       <>
       
@@ -6,4 +6,4 @@ function User() {
    )
  }
  
- export default User
+ export default Error

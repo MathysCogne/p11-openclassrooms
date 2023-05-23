@@ -27,6 +27,17 @@
       font-size: 5rem;
       margin-bottom: 10px;
    }
+   &__error{
+      &-message{
+         color: red;
+         font-size: 0.9rem;
+         margin: 0 0 1rem 0;
+      }
+      &-border{
+         border: 1px solid red;
+      }
+   }
+      
 }
 
 .input{
@@ -41,12 +52,13 @@
       display: flex;
       flex-direction: column;
       text-align: left;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
 
       label{
          font-weight: bold;
       }
       input{
+         margin: 5px 0;
          padding: 5px;
          font-size: 1.2rem;
       }

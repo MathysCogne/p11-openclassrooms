@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 
 import "./signin.scss";
@@ -9,6 +9,8 @@ function SignIn() {
    const dispatch = useDispatch(); // Récupération de la fonction dispatch du store
 
    // States
+   const token = useSelector((state) => state.auth.token);
+
    const [username, setUsername] = useState(''); 
    const [password, setPassword] = useState('');
    const [error, setError] = useState('');
@@ -62,6 +64,13 @@ function SignIn() {
             console.error(error);
          });
    };
+
+   // Si l'utilisateur est déjà connecté, on le redirige vers la page user
+   useEffect(() => {
+      if (token) {
+         navigate("/user");
+      }
+   }, [token, navigate]);
 
 
    return (

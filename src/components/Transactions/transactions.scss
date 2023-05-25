@@ -1,0 +1,86 @@
+.account {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border: 1px solid black;
+   width: 80%;
+   margin: 0 auto;
+   flex-direction: column;
+   padding: 1.5rem;
+   box-sizing: border-box;
+   text-align: left;
+   margin-bottom: 2rem;
+
+   border-radius: 30px;
+   @media (min-width: 920px) {
+      padding: 2rem;
+   }
+// &-header{ // &h1 dans le fichier EditUser.scss
+   
+   &-amount {
+      font-size: 1.9rem;
+      font-weight: bold;
+      margin: 10px 0;
+      @media (min-width: 920px) {
+         font-size: 2.5rem;
+      }
+      &-description {
+         font-size: 0.9rem;
+         font-weight: normal;
+         @media (min-width: 920px) {
+            font-size: 1rem;
+         }
+      }
+   }
+   &-title {
+      font-size: 0.9rem;
+      font-weight: normal;
+      @media (min-width: 920px) {
+         font-size: 1rem;
+      }
+   }
+   &-content-wrapper{
+      width: 100%;
+      flex: 1;
+   }
+}
+ 
+ 
+.transaction-button {
+   display: block;
+   width: 100%;
+   padding: 8px;
+   font-size: 0.9rem;
+   font-weight: bold;
+   border-color: #00bc7700;
+   background-color: #00bc77;
+
+   padding: 9px 15px 9px 15px;
+   border-radius: 20px;
+   margin-top: 15px;
+   @media (min-width: 920px) {
+      margin-top: 0px;
+      font-size: 1.1rem;
+   }
+
+   cursor: pointer;
+   transition: all 0.2s;
+   &:hover {
+      scale: 1.05;
+   }
+}
+ 
+ @media (min-width: 720px) {
+   .account {
+      flex-direction: row;
+   }
+   
+   .account-content-wrapper.cta {
+      flex: 0;
+   }
+   
+   .transaction-button {
+      width: 200px;
+   }
+}
+ 

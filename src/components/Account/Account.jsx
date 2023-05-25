@@ -14,6 +14,12 @@ function Account() {
    const token = useSelector((state) => state.auth.token); // Récupération du token ds Redux
    const username = useSelector((state) => state.name.username);
    // console.log("DEBUG RECUP STATE" + token);
+
+   const handleLogout = () => {
+      dispatch({ // Enregistrement du token dans le store
+         type: 'LOGOUT',
+      });
+   };
  
    useEffect(() => {
       if (token) {
@@ -56,18 +62,18 @@ function Account() {
    return (
       <>
          {username ? (
-            <Link to="/user">
-               <i className="fas fa-user-circle"></i>
-               <p>{username}</p>
-            </Link>
-
+            <div className='cont-user'>
+               <button className='btn-user' onClick={handleLogout}>Logout</button>
+               <Link className='btn-user' to="/user">
+                  <i className="fas fa-user-circle"></i>
+                  <p>{username}</p>
+               </Link>
+            </div>
          ) : (
-
-            <Link to="/signin">
+            <Link className='btn-user' to="/signin">
                <i className="fas fa-user-circle"></i>
                <p>Sign In</p>
             </Link>
-
          )}
       </>
    )

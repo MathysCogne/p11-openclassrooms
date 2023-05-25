@@ -1,19 +1,31 @@
-.cont-nav{
-   a{
+.cont{
+   &-nav{
+      p, i {
+         margin: 0 3px;
+      }
+   }
+   &-user{
       display: flex;
       align-items: center;
       justify-content: center;
-      
-      margin: 0 7px 0 0;
-
-      font-size: 1.2rem;
-      text-decoration: none;
-      color: #000;
+      margin-bottom: 40px;
+      @media (min-width: 920px) {
+         margin-bottom: 0px;
+      }
    }
-   p, i {
-      margin: 0 3px;
-   }
-   p:hover{
-      text-decoration: underline;
+}
+.btn-user{
+   color: black;
+   display: flex;
+   text-decoration: none;
+   margin: 7px 15px;
+   padding: 10px 15px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-size: 1rem;
+   background-color: #fff;
+   cursor: pointer;
+   &:hover{
+      background-color: #ccc;
    }
 }

@@ -22,6 +22,12 @@
       border-color: #00bc7700;
       background-color: #00bc77;
       color: black;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      &:hover{
+         scale: 1.02;
+      }
    }
    &-icon{
       font-size: 5rem;
@@ -58,9 +64,13 @@
          font-weight: bold;
       }
       input{
-         margin: 5px 0;
-         padding: 5px;
          font-size: 1.2rem;
+
+         width: 97.5%;
+         height: 40px;
+         margin: 5px 0 20px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
       }
    }
 }

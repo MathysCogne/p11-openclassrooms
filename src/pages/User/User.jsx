@@ -22,6 +22,7 @@ function User() {
       <main className="main">
 
          <EditUser />
+         
          <Transactions />
       
       </main>

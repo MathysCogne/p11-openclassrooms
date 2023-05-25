@@ -2,13 +2,18 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+   flex-direction: column;
  
-   height: 100px;
+   height: 130px;
+   border-bottom: 1px solid #ccc;
    @media (min-width: 920px) {
       height: 125px;
+      flex-direction: row;
+      border-bottom: 1px solid #cccccc00;
    }
 }
 
 .logo-header{
    height: 7vh;
+   margin: 10px 0 0 0;
 }

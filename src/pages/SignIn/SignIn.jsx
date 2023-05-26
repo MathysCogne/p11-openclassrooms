@@ -80,13 +80,13 @@ function SignIn() {
 
             <form onSubmit={handleSignIn}>
                <div className="input-wrapper">
-                  <label htmlFor="username">Username</label>
-                  <input className={error ? 'sign-in__error-border' : ''} type="text" id="username" value={username} onChange={handleUsernameChange} />
+                  <label htmlFor="username">Email</label>
+                  <input className={error ? 'sign-in__error-border' : ''} type="email" id="username" value={username} onChange={handleUsernameChange} required/>
                </div>
 
                <div className="input-wrapper">
                   <label htmlFor="password">Password</label>
-                  <input className={error ? 'sign-in__error-border' : ''} type="password" id="password" value={password} onChange={handlePasswordChange} />
+                  <input className={error ? 'sign-in__error-border' : ''} type="password" id="password" value={password} onChange={handlePasswordChange} required/>
                </div>
 
                {error && <p className="sign-in__error-message">The username or password incorrect</p>}

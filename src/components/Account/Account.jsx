@@ -1,5 +1,5 @@
 // IMPORTS
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
 
@@ -64,16 +64,21 @@ function Account() {
          {username ? (
             <div className='cont-user'>
                <button className='btn-user' onClick={handleLogout}>Logout</button>
-               <Link className='btn-user' to="/user">
+               <NavLink className='btn-user' to="/user">
                   <i className="fas fa-user-circle"></i>
                   <p>{username}</p>
-               </Link>
+               </NavLink>
             </div>
          ) : (
-            <Link className='btn-user' to="/signin">
-               <i className="fas fa-user-circle"></i>
-               <p>Sign In</p>
-            </Link>
+            <div className='cont-user'>
+               <NavLink className='btn-user' to="/signin">
+                  <p>Sign In</p>
+               </NavLink>
+               <NavLink className='btn-user' to="/signup">
+                  <p>Sign Up</p>
+               </NavLink>
+            </div>
+            
          )}
       </>
    )

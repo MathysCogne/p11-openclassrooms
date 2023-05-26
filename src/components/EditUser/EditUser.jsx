@@ -82,7 +82,7 @@ function EditUser() {
                <input type="text" value={lastname} disabled />
                
                <label>New Username:</label>
-               <input type="text" value={newUsername} onChange={handleInputChange} />
+               <input type="text" value={newUsername} onChange={handleInputChange} required/>
                
                <button type="submit" className='transaction-button button'>Confirm</button>
             </form>

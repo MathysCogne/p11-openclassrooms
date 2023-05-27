@@ -40,14 +40,18 @@ L'objectif était d'implémentez le front-end d'une application bancaire avec Re
 > - [Node.js v12](https://nodejs.org/en/)
 > - [MongoDB Community Server](https://www.mongodb.com/try/download/community)
 
-> Si vous n'avez pas la bonne version de node, vous pouvez utiliser Node Version Switcher
-> - [Node Version Switcher](https://github.com/jasongin/nvs)
 &nbsp;
 
 ```bash
 node --version
 mongo --version
 ```
+&nbsp;
+> Si vous n'avez pas la bonne version de node, vous pouvez utiliser Node Version Switcher
+> - [Node Version Switcher](https://github.com/jasongin/nvs)
+&nbsp;
+
+
 &nbsp;
 
 &nbsp;

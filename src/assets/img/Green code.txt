@@ -1,0 +1,5 @@
+Redimension et compression des images:
+
+215 Ko >>> 50,3 Ko 
+
+Soit un gain total de 76.6%

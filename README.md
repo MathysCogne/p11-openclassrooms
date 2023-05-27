@@ -20,6 +20,7 @@ Projet numéro onze du parcours développeur front-end de chez OpenClassrooms
 L'objectif était d'implémentez le front-end d'une application bancaire avec React
 > Pour en savoir plus, retrouvez le brief de mission en bas de page
 
+&nbsp;
 
 ## Compétences évaluées
 
@@ -34,20 +35,41 @@ L'objectif était d'implémentez le front-end d'une application bancaire avec Re
 &nbsp;
 
 &nbsp;
-## Installation des dépendances
+## Prérequis
+
+> - [Node.js v12](https://nodejs.org/en/)
+> - [MongoDB Community Server](https://www.mongodb.com/try/download/community)
+
+> Si vous n'avez pas la bonne version de node, vous pouvez utiliser Node Version Switcher
+> - [Node Version Switcher](https://github.com/jasongin/nvs)
+&nbsp;
+
+```bash
+node --version
+mongo --version
+```
+&nbsp;
+
+&nbsp;
+
+## Back-end
 
 > Cloner le repo en local
 
-> Ouvrir celui-ci avec son IDE, se placer à la racine du projet
+> Se rendre dans le dossier ``back-end``
 
-> Ouvrir le terminal
+> Installer les dépendances: ``yarn install``
 
-> Installer node_modules: ``npm add``
+> Lancer le serveur: ``yarn run dev:server``
 
+> Démarrer la BD: ``yarn run populate-db``
 
-## Démarrage
+&nbsp;
 
-> Pour lancer l'application ``npm run start``
+## Front
+> Installer les dépendances: ``yarn install``
+
+> Pour lancer l'application ``yarn start``
 
 &nbsp;
 

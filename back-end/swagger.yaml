@@ -1,158 +1,136 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
-  title: Bank Argent API documentation
-  description: Contains all available API endpoints in this codebase
-  version: '1.0.0'
-  termsOfService: 'http://swagger.io/terms/'
+  version: "1.0"
+  title: Bank Argent API documentation // Transactions API
+  description: Second part of project 12
 host: localhost:3001
 basePath: /api/v1
 schemes:
   - http
 paths:
-  /user/login:
-    post:
-      tags:
-        - User Module
-      summary: Login
-      description: API for Login
-      parameters:
-        - in: body
-          name: body
-          description: Login Payload
-          required: true
-          schema:
-            $ref: '#/definitions/Login'
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: Login Successfully
-          schema:
-            $ref: '#/definitions/LoginResponse'
-        '400':
-          description: Invalid Fields
-        '500':
-          description: Internal Server Error
-  /user/signup:
-    post:
-      tags:
-        - User Module
-      summary: Signup
-      description: API for Signup
-      parameters:
-        - in: body
-          name: body
-          description: Signup Payload
-          required: true
-          schema:
-            $ref: '#/definitions/User'
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: Signup Successfully
-          schema:
-            $ref: '#/definitions/ApiResponse'
-        '400':
-          description: Invalid Fields
-        '500':
-          description: Internal Server Error
-  /user/profile:
-    post:
+  /transactions:
+    get:
+      description: Retrieve all transactions for the current month
       security:
-        - Bearer: []
-      tags:
-        - User Module
-      summary: User Profile API
-      description: API for fetching a user profile
-      #produces:
-       # - application/json
+        - tokenAuth: []
       responses:
-        '200':
-          description: User profile retrieved successully
-          schema:
-            $ref: '#/definitions/ApiResponse'
-        '400':
-          description: Invalid Fields
-        '500':
-          description: Internal Server Error
+        200:
+          description: Success. Returns the list of transactions.
+        401:
+          description: Unauthorized. Invalid or missing token.
+        500:
+          description: Server error.
+
+  /transactions/{transactionId}:
+    get:
+      description: Retrieve details of a specific transaction
+      security:
+        - tokenAuth: []
+      parameters:
+        - name: transactionId
+          in: path
+          description: ID of the transaction to retrieve
+          required: true
+          type: string
+      responses:
+        200:
+          description: Success. Returns the details of the specified transaction.
+        401:
+          description: Unauthorized. Invalid or missing token.
+        404:
+          description: Transaction not found.
+        500:
+          description: Server error.
+
     put:
+      description: Update or add information of a specific transaction
       security:
-        - Bearer: []
-      tags:
-        - User Module
-      summary: User Profile API
-      description: API for updating a user profile
+        - tokenAuth: []
       parameters:
-        - in: body
-          name: body
-          description: Update user profile attributes
+        - name: transactionId
+          in: path
+          description: ID of the transaction to update
+          required: true
+          type: string
+        - name: transaction
+          in: body
+          description: Object representing the new information of the transaction
           required: true
           schema:
-            $ref: '#/definitions/UserProfile'
-      produces:
-        - application/json
+            $ref: "#/definitions/Transaction"
       responses:
-        '200':
-          description: User profile retrieved successully
+        200:
+          description: Success. The transaction information has been updated successfully.
+        400:
+          description: Bad request. Please check the provided data.
+        401:
+          description: Unauthorized. Invalid or missing token.
+        404:
+          description: Transaction not found.
+        500:
+          description: Server error.
+
+    delete:
+      description: Delete information of a specific transaction
+      security:
+        - tokenAuth: []
+      parameters:
+        - name: transactionId
+          in: path
+          description: ID of the transaction to delete
+          required: true
+          type: string
+      responses:
+        204:
+          description: Success. The transaction information has been deleted successfully.
+        401:
+          description: Unauthorized. Invalid or missing token.
+        404:
+          description: Transaction not found.
+        500:
+          description: Server error.
+
+  /transactions/{transactionId}:
+    post:
+      description: Add information related to a specific transaction
+      security:
+        - tokenAuth: []
+      parameters:
+        - name: transactionId
+          in: path
+          description: ID of the transaction to add information
+          required: true
+          type: string
+        - name: info
+          in: body
+          description: Object representing the information to be added
+          required: true
           schema:
-            $ref: '#/definitions/ApiResponse'
-        '400':
-          description: Invalid Fields
-        '500':
-          description: Internal Server Error
+            $ref: "#/definitions/Transaction"
+      responses:
+        201:
+          description: Success. The information has been added successfully.
+        400:
+          description: Bad request. Please check the provided data.
+        401:
+          description: Unauthorized. Invalid or missing token.
+        404:
+          description: Transaction not found.
+        500:
+          description: Server error.
+
 securityDefinitions:
-  Bearer:
+  tokenAuth:
     type: apiKey
     name: Authorization
     in: header
+    description: Token-based authentication. Provide the token in the format 'Bearer {token}'.
+
 definitions:
-  User:
-    properties:
-      email:
-        type: string
-        description: user email
-      password:
-        type: string
-        description: user password
-      firstName:
-        type: string
-        description: user first name
-      lastName:
-        type: string
-        description: user last name
-      userName:
-        type: string
-        description: user public name
-  Login:
-    properties:
-      email:
-        type: string
-        description: user email
-      password:
-        type: string
-        description: user password
-  ApiResponse:
+  Transaction:
     type: object
     properties:
-      status:
-        type: integer
-      message:
+      id:
         type: string
-      body:
-        type: object
-        properties:
-          id:
-            type: string
-          email:
-            type: string
-  LoginResponse:
-    type: object
-    properties:
-      token:
-        type: string
-  UserProfile:
-    type: object
-    properties:
-      userName:
+      description:
         type: string

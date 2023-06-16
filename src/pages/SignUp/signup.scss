@@ -2,16 +2,13 @@
    box-sizing: border-box;
    background-color: white;
    margin: 0 auto;
-   margin-top: 5rem;
+   margin-top: 0rem;
    padding: 2rem;
 
    display: flex;
    flex-direction: column;
    align-items: center;
 
-   &__wrapper{
-      
-   }
    &__button{
       display: block;
       width: 100%;

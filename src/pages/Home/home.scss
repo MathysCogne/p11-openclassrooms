@@ -3,7 +3,7 @@
    
    background-size: cover;
    background-repeat: no-repeat;
-   height: 40vh;
+   height: 50vh;
    width: 100%;
    position: relative;
    background-position: 0 -50px;
@@ -24,7 +24,6 @@
       border-radius: 25px;
       @media (min-width: 920px) {
          position: absolute;
-         top: 50px;
          right: 50px;
          width: 300px;
          margin: 2rem;
@@ -59,7 +58,7 @@
 
    @media (min-width: 920px) {
       flex-direction: row;
-      margin-top: 4rem;
+      margin-top: 1rem;
    }
 
    &__item{
